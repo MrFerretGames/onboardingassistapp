@@ -4,7 +4,7 @@
 #include "CustomPlainTextEdit.h"
 
 
-
+//build widget and connections to slots
 OnboardAssist::OnboardAssist(QWidget* parent)
     : QMainWindow(parent), fullNames(), firstNames(), lastNames(), emailAppend(), modifiedExtensions()
 {
@@ -13,10 +13,12 @@ OnboardAssist::OnboardAssist(QWidget* parent)
     checkBoxGroup = new QButtonGroup(this);
     connect(ui.processButton, &QPushButton::clicked, this, &OnboardAssist::onProcessButtonClicked);
     QPushButton* extensionButton = findChild<QPushButton*>("extensionButton");
+
+
     if (extensionButton) {
         connect(extensionButton, &QPushButton::clicked, this, &OnboardAssist::onExtensionButtonClicked);
     }
-
+    //figure out which checkbox is checked
     for (int i = 1; i <= 16; ++i) {
         QCheckBox* checkBox = findChild<QCheckBox*>(QString("checkBox_%1").arg(i));
         if (checkBox) {
@@ -24,7 +26,8 @@ OnboardAssist::OnboardAssist(QWidget* parent)
         }
     }
 }
-
+// gets info from the extension and username fields based on the selected checkbox.
+// extracts the info to be copy/pasted then appends it to the display widgets
 void OnboardAssist::onProcessButtonClicked()
 {
     QString extensions;
@@ -63,24 +66,14 @@ void OnboardAssist::onProcessButtonClicked()
         }
     }
 
-    qDebug() << "Extensions:" << extensions;
-    qDebug() << "Usernames:" << usernames;
-
-    qDebug() << "Full Names:" << fullNames.join(" ");
-    qDebug() << "First Names:" << firstNames.join(" ");
-    qDebug() << "Last Names:" << lastNames.join(" ");
-    qDebug() << "Email Addresses:" << emailAppend.join(" ");
-    qDebug() << "Modified Extensions:" << modifiedExtensions.join(" ");
-
-    // Process the data as needed
-
-    // Update the UI with the new information
+    // Point to display set it to what is in the text box
     QPlainTextEdit* firstNameDisplay = findChild<QPlainTextEdit*>("firstNameDisplay");
     QPlainTextEdit* lastNameDisplay = findChild<QPlainTextEdit*>("lastNameDisplay");
     QPlainTextEdit* emailDisplay = findChild<QPlainTextEdit*>("emailDisplay");
     QPlainTextEdit* modifiedExtensionDisplay = findChild<QPlainTextEdit*>("modifiedExtensionDisplay"); 
     QPlainTextEdit* fullNameDisplay = findChild<QPlainTextEdit*>("fullNameDisplay");
 
+    //if all is valid, change the box to the new text
     if (firstNameDisplay && lastNameDisplay && emailDisplay && modifiedExtensionDisplay && fullNameDisplay) {
         firstNameDisplay->setPlainText(firstNames.join(" "));
         lastNameDisplay->setPlainText(lastNames.join(" "));
@@ -90,6 +83,8 @@ void OnboardAssist::onProcessButtonClicked()
 
     }
 }
+
+ //when you click the extension button it populates in order down the list from the first one
 void OnboardAssist::onExtensionButtonClicked()
 {
     QPlainTextEdit* extensionPaste1 = findChild<QPlainTextEdit*>("extensionPaste_1");

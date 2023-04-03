@@ -1245,36 +1245,34 @@ public:
         extensionPaste_3->setPlainText(QCoreApplication::translate("OnboardAssistClass", "3002", nullptr));
         extensionPaste_4->setPlainText(QCoreApplication::translate("OnboardAssistClass", "3003", nullptr));
         extensionPaste_5->setPlainText(QCoreApplication::translate("OnboardAssistClass", "3004", nullptr));
-        extensionPaste_6->setPlainText(QCoreApplication::translate("OnboardAssistClass", "3048", nullptr));
-        extensionPaste_7->setPlainText(QCoreApplication::translate("OnboardAssistClass", "3048", nullptr));
-        extensionPaste_8->setPlainText(QCoreApplication::translate("OnboardAssistClass", "3048", nullptr));
-        extensionPaste_9->setPlainText(QCoreApplication::translate("OnboardAssistClass", "3048", nullptr));
-        extensionPaste_10->setPlainText(QCoreApplication::translate("OnboardAssistClass", "3048", nullptr));
-        extensionPaste_11->setPlainText(QCoreApplication::translate("OnboardAssistClass", "3048", nullptr));
-        extensionPaste_12->setPlainText(QCoreApplication::translate("OnboardAssistClass", "3048", nullptr));
-        extensionPaste_13->setPlainText(QCoreApplication::translate("OnboardAssistClass", "3048", nullptr));
-        extensionPaste_14->setPlainText(QCoreApplication::translate("OnboardAssistClass", "3048", nullptr));
-        extensionPaste_15->setPlainText(QCoreApplication::translate("OnboardAssistClass", "3048", nullptr));
-        extensionPaste_16->setPlainText(QCoreApplication::translate("OnboardAssistClass", "3048", nullptr));
-        nameUnderscore_1->setPlainText(QCoreApplication::translate("OnboardAssistClass", "brenda_Crowell\n"
+        extensionPaste_6->setPlainText(QCoreApplication::translate("OnboardAssistClass", "3005", nullptr));
+        extensionPaste_7->setPlainText(QCoreApplication::translate("OnboardAssistClass", "3006", nullptr));
+        extensionPaste_8->setPlainText(QCoreApplication::translate("OnboardAssistClass", "3007", nullptr));
+        extensionPaste_9->setPlainText(QCoreApplication::translate("OnboardAssistClass", "3008", nullptr));
+        extensionPaste_10->setPlainText(QCoreApplication::translate("OnboardAssistClass", "3009", nullptr));
+        extensionPaste_11->setPlainText(QCoreApplication::translate("OnboardAssistClass", "3011", nullptr));
+        extensionPaste_12->setPlainText(QCoreApplication::translate("OnboardAssistClass", "3012", nullptr));
+        extensionPaste_13->setPlainText(QCoreApplication::translate("OnboardAssistClass", "3013", nullptr));
+        extensionPaste_14->setPlainText(QCoreApplication::translate("OnboardAssistClass", "3014", nullptr));
+        extensionPaste_15->setPlainText(QCoreApplication::translate("OnboardAssistClass", "3015", nullptr));
+        extensionPaste_16->setPlainText(QCoreApplication::translate("OnboardAssistClass", "3016", nullptr));
+        nameUnderscore_1->setPlainText(QCoreApplication::translate("OnboardAssistClass", "First_Last", nullptr));
+        nameUnderscore_2->setPlainText(QCoreApplication::translate("OnboardAssistClass", "First_Last2", nullptr));
+        nameUnderscore_3->setPlainText(QCoreApplication::translate("OnboardAssistClass", "First_Last3", nullptr));
+        nameUnderscore_4->setPlainText(QCoreApplication::translate("OnboardAssistClass", "First_Last4", nullptr));
+        nameUnderscore_5->setPlainText(QCoreApplication::translate("OnboardAssistClass", "First_Last5", nullptr));
+        nameUnderscore_6->setPlainText(QCoreApplication::translate("OnboardAssistClass", "First_Last6", nullptr));
+        nameUnderscore_7->setPlainText(QCoreApplication::translate("OnboardAssistClass", "First_Last7", nullptr));
+        nameUnderscore_8->setPlainText(QCoreApplication::translate("OnboardAssistClass", "First_Last8", nullptr));
+        nameUnderscore_9->setPlainText(QCoreApplication::translate("OnboardAssistClass", "First_Last9", nullptr));
+        nameUnderscore_10->setPlainText(QCoreApplication::translate("OnboardAssistClass", "First_Last10", nullptr));
+        nameUnderscore_11->setPlainText(QCoreApplication::translate("OnboardAssistClass", "First_Last11", nullptr));
+        nameUnderscore_12->setPlainText(QCoreApplication::translate("OnboardAssistClass", "First_Last12", nullptr));
+        nameUnderscore_13->setPlainText(QCoreApplication::translate("OnboardAssistClass", "First_Last13", nullptr));
+        nameUnderscore_14->setPlainText(QCoreApplication::translate("OnboardAssistClass", "First_Last14", nullptr));
+        nameUnderscore_15->setPlainText(QCoreApplication::translate("OnboardAssistClass", "First_Last15", nullptr));
+        nameUnderscore_16->setPlainText(QCoreApplication::translate("OnboardAssistClass", "First_Last16\n"
 "", nullptr));
-        nameUnderscore_2->setPlainText(QCoreApplication::translate("OnboardAssistClass", "brenda_Crowell1\n"
-"", nullptr));
-        nameUnderscore_3->setPlainText(QCoreApplication::translate("OnboardAssistClass", "brenda_Crowell2\n"
-"", nullptr));
-        nameUnderscore_4->setPlainText(QCoreApplication::translate("OnboardAssistClass", "brenda_Crowell4", nullptr));
-        nameUnderscore_5->setPlainText(QCoreApplication::translate("OnboardAssistClass", "brenda_Crowell5", nullptr));
-        nameUnderscore_6->setPlainText(QCoreApplication::translate("OnboardAssistClass", "brenda_Crowell6", nullptr));
-        nameUnderscore_7->setPlainText(QCoreApplication::translate("OnboardAssistClass", "brenda_Crowell7", nullptr));
-        nameUnderscore_8->setPlainText(QCoreApplication::translate("OnboardAssistClass", "brenda_Crowell8", nullptr));
-        nameUnderscore_9->setPlainText(QCoreApplication::translate("OnboardAssistClass", "brenda_Crowell9", nullptr));
-        nameUnderscore_10->setPlainText(QCoreApplication::translate("OnboardAssistClass", "11", nullptr));
-        nameUnderscore_11->setPlainText(QCoreApplication::translate("OnboardAssistClass", "12", nullptr));
-        nameUnderscore_12->setPlainText(QCoreApplication::translate("OnboardAssistClass", "brent", nullptr));
-        nameUnderscore_13->setPlainText(QCoreApplication::translate("OnboardAssistClass", "brenda_Crowell14", nullptr));
-        nameUnderscore_14->setPlainText(QCoreApplication::translate("OnboardAssistClass", "brenda_Crowell15", nullptr));
-        nameUnderscore_15->setPlainText(QCoreApplication::translate("OnboardAssistClass", "brenda_Crowell17", nullptr));
-        nameUnderscore_16->setPlainText(QCoreApplication::translate("OnboardAssistClass", "16", nullptr));
     } // retranslateUi
 
 };
