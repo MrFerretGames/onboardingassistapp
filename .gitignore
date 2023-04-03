@@ -103,5 +103,6 @@ ui_*
 build-*
 debug/
 release/
+OnboardAssist/x64
 x64/
 .vs/OnboardAssist/v17/
