@@ -9,7 +9,7 @@ OnboardAssist::OnboardAssist(QWidget* parent)
     : QMainWindow(parent), fullNames(), firstNames(), lastNames(), emailAppend(), modifiedExtensions()
 {
     ui.setupUi(this);
-    setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint); // Add this line to set the window flag
+    setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint); 
     checkBoxGroup = new QButtonGroup(this);
     connect(ui.processButton, &QPushButton::clicked, this, &OnboardAssist::onProcessButtonClicked);
     QPushButton* extensionButton = findChild<QPushButton*>("extensionButton");

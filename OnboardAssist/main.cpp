@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
         
         //Style Sheet Stuff
-    QFile styleSheetFile("./SpyBot.css");
+    QFile styleSheetFile("./stylesheet.css");
     styleSheetFile.open(QFile::ReadOnly);
     QString styleSheet = QLatin1String(styleSheetFile.readAll());
     a.setStyleSheet(styleSheet);

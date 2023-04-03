@@ -15,7 +15,7 @@ void CustomPlainTextEdit::focusInEvent(QFocusEvent* event)
     if (event->reason() != Qt::MouseFocusReason)
     {
         selectAll();
-        QWidget* parentWidgetInstance = parentWidget(); // Change the variable name here
+        QWidget* parentWidgetInstance = parentWidget(); 
         if (parentWidgetInstance) {
             QLineEdit* extensionField = parentWidgetInstance->findChild<QLineEdit*>("extensionPaste");
             if (extensionField) {
@@ -27,7 +27,7 @@ void CustomPlainTextEdit::focusInEvent(QFocusEvent* event)
 }
 
 
-void CustomPlainTextEdit::keyPressEvent(QKeyEvent* event) // Remove the semicolon here
+void CustomPlainTextEdit::keyPressEvent(QKeyEvent* event) 
 {
     if (event->key() == Qt::Key_Enter || event->key() == Qt::Key_Return)
     {
@@ -37,7 +37,7 @@ void CustomPlainTextEdit::keyPressEvent(QKeyEvent* event) // Remove the semicolo
     QPlainTextEdit::keyPressEvent(event);
 }
 
-void CustomPlainTextEdit::mousePressEvent(QMouseEvent* event) // Remove the semicolon here
+void CustomPlainTextEdit::mousePressEvent(QMouseEvent* event) 
 {
     QPlainTextEdit::mousePressEvent(event);
     selectAll();
