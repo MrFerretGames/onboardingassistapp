@@ -1,0 +1,1776 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>OnboardAssistClass</class>
+ <widget class="QMainWindow" name="OnboardAssistClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>848</width>
+    <height>834</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>OnboardAssist</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/*Copyright (c) DevSec Studio. All rights reserved.
+
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED *AS IS*, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+/*-----QWidget-----*/
+QWidget
+{
+	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(27, 39, 50, 255),stop:1 rgba(27, 39, 55, 255));
+	color: #ffff;
+
+}
+
+
+/*-----QLabel-----*/
+QLabel
+{
+	background-color: transparent;
+	color: #c2c7d5;
+	font-size: 13px;
+
+}
+
+
+/*-----QPushButton-----*/
+QPushButton
+{
+	background-color: qlineargradient(spread:pad, x1:0, y1:0.511, x2:1, y2:0.511, stop:0 rgba(0, 172, 149, 155),stop:0.995192 rgba(54, 197, 177, 155));
+	color: #fff;
+	font-size: 11px;
+	font-weight: bold;
+	border: none;
+	border-radius: 3px;
+	padding: 5px;
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: qlineargradient(spread:pad, x1:0, y1:0.511, x2:1, y2:0.511, stop:0 rgba(0, 207, 179, 255),stop:1 rgba(70, 255, 230, 255));
+
+}
+
+
+/*-----QCheckBox-----*/
+QCheckBox
+{
+	background-color: transparent;
+	color: #fff;
+	font-size: 10px;
+	font-weight: bold;
+	border: none;
+	border-radius: 5px;
+
+}
+
+
+/*-----QCheckBox-----*/
+QCheckBox::indicator
+{
+    color: #b1b1b1;
+    background-color: #323232;
+    border: 1px solid darkgray;
+    width: 12px;
+    height: 12px;
+
+}
+
+
+QCheckBox::indicator:checked
+{
+    image:url(&quot;./ressources/check.png&quot;);
+	background-color: qlineargradient(spread:pad, x1:0, y1:0.511, x2:1, y2:0.511, stop:0 rgba(0, 172, 149, 255),stop:0.995192 rgba(54, 197, 177, 255));;
+    border: 1px solid #607cff;
+
+}
+
+
+QCheckBox::indicator:unchecked:hover
+{
+    border: 1px solid #08b099;
+
+}
+
+
+QCheckBox::disabled
+{
+	color: #656565;
+
+}
+
+
+QCheckBox::indicator:disabled
+{
+	background-color: #656565;
+	color: #656565;
+    border: 1px solid #656565;
+
+}
+
+
+/*-----QLineEdit-----*/
+QLineEdit
+{
+	background-color: #c2c7d5;
+	color: #000;
+	font-weight: bold;
+	border: none;
+	border-radius: 2px;
+	padding: 3px;
+
+}
+
+
+/*-----QListView-----*/
+QListView
+{
+	background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(50, 61, 80, 255),stop:1 rgba(44, 49, 69, 255));
+	color: #fff;
+	font-size: 12px;
+	font-weight: bold;
+	border: 1px solid #191919;
+	show-decoration-selected: 0;
+
+}
+
+
+QListView::item
+{
+	color: #31cecb;
+	background-color: #454e5e;
+	border: none;
+	padding: 5px;
+	border-radius: 0px;
+	padding-left : 10px;
+	height: 42px;
+
+}
+
+QListView::item:selected
+{
+	color: #31cecb;
+	background-color: #454e5e;
+
+}
+
+
+QListView::item:!selected
+{
+	color:white;
+	background-color: transparent;
+	border: none;
+	padding-left : 10px;
+
+}
+
+
+QListView::item:!selected:hover
+{
+	color: #bbbcba;
+	background-color: #454e5e;
+	border: none;
+	padding-left : 10px;
+
+}
+
+
+/*-----QTreeView-----*/
+QTreeView 
+{
+	background-color: #232939;
+	show-decoration-selected: 0;
+	color: #c2c8d7;
+
+}
+
+
+QTreeView::item 
+{
+	border-top-color: transparent;
+	border-bottom-color: transparent;
+
+}
+
+
+QTreeView::item:hover 
+{
+	background-color: #606060;
+	color: #fff;
+
+}
+
+
+QTreeView::item:selected 
+{
+	background-color: #0ab19a;
+	color: #fff;
+
+}
+
+
+QTreeView::item:selected:active
+{
+	background-color: #0ab19a;
+	color: #fff;
+
+}
+
+
+QTreeView::branch:has-children:!has-siblings:closed,
+QTreeView::branch:closed:has-children:has-siblings 
+{
+	image: url(://tree-closed.png);
+
+}
+
+QTreeView::branch:open:has-children:!has-siblings,
+QTreeView::branch:open:has-children:has-siblings  
+{
+	image: url(://tree-open.png);
+
+}
+
+
+/*-----QTableView &amp; QTableWidget-----*/
+QTableView
+{
+    background-color: #232939;
+	border: 1px solid gray;
+    color: #f0f0f0;
+    gridline-color: #232939;
+    outline : 0;
+
+}
+
+
+QTableView::disabled
+{
+    background-color: #242526;
+    border: 1px solid #32414B;
+    color: #656565;
+    gridline-color: #656565;
+    outline : 0;
+
+}
+
+
+QTableView::item:hover 
+{
+    background-color: #606060;
+    color: #f0f0f0;
+
+}
+
+
+QTableView::item:selected 
+{
+	background-color: #0ab19a;
+    color: #F0F0F0;
+
+}
+
+
+QTableView::item:selected:disabled
+{
+    background-color: #1a1b1c;
+    border: 2px solid #525251;
+    color: #656565;
+
+}
+
+
+QTableCornerButton::section
+{
+	background-color: #343a49;
+    color: #fff;
+
+}
+
+
+QHeaderView::section
+{
+	color: #fff;
+	border-top: 0px;
+	border-bottom: 1px solid gray;
+	border-right: 1px solid gray;
+	background-color: #343a49;
+    margin-top:1px;
+	margin-bottom:1px;
+	padding: 5px;
+
+}
+
+
+QHeaderView::section:disabled
+{
+    background-color: #525251;
+    color: #656565;
+
+}
+
+
+QHeaderView::section:checked
+{
+    color: #fff;
+    background-color: #0ab19a;
+
+}
+
+
+QHeaderView::section:checked:disabled
+{
+    color: #656565;
+    background-color: #525251;
+
+}
+
+
+QHeaderView::section::vertical::first,
+QHeaderView::section::vertical::only-one
+{
+    border-top: 1px solid #353635;
+
+}
+
+
+QHeaderView::section::vertical
+{
+    border-top: 1px solid #353635;
+
+}
+
+
+QHeaderView::section::horizontal::first,
+QHeaderView::section::horizontal::only-one
+{
+    border-left: 1px solid #353635;
+
+}
+
+
+QHeaderView::section::horizontal
+{
+    border-left: 1px solid #353635;
+
+}
+
+
+/*-----QScrollBar-----*/
+QScrollBar:horizontal 
+{
+    background-color: transparent;
+    height: 8px;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+
+QScrollBar::handle:horizontal 
+{
+    border: none;
+	min-width: 100px;
+    background-color: #56576c;
+
+}
+
+
+QScrollBar::add-line:horizontal, 
+QScrollBar::sub-line:horizontal,
+QScrollBar::add-page:horizontal, 
+QScrollBar::sub-page:horizontal 
+{
+    width: 0px;
+    background-color: transparent;
+
+}
+
+
+QScrollBar:vertical 
+{
+    background-color: transparent;
+    width: 8px;
+    margin: 0;
+
+}
+
+
+QScrollBar::handle:vertical 
+{
+    border: none;
+	min-height: 100px;
+    background-color: #56576c;
+
+}
+
+
+QScrollBar::add-line:vertical, 
+QScrollBar::sub-line:vertical,
+QScrollBar::add-page:vertical, 
+QScrollBar::sub-page:vertical 
+{
+    height: 0px;
+    background-color: transparent;
+
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QWidget" name="leftMenuContainer" native="true">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QWidget" name="leftMenuSubContainer" native="true">
+         <property name="styleSheet">
+          <string notr="true">background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(27, 39, 39, 255),stop:1 rgba(27, 39, 39, 255));</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item alignment="Qt::AlignTop">
+           <widget class="QFrame" name="frame">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>270</width>
+              <height>150</height>
+             </size>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <item>
+              <widget class="QPushButton" name="processCSV">
+               <property name="styleSheet">
+                <string notr="true">background-color: #232939;
+	border: 1px solid gray;
+    color: #f0f0f0;
+    gridline-color: #232939;
+    outline : 0;</string>
+               </property>
+               <property name="text">
+                <string>LoadCSV File</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="processButton">
+               <property name="styleSheet">
+                <string notr="true">background-color: #232939;
+	border: 1px solid gray;
+    color: #f0f0f0;
+    gridline-color: #232939;
+    outline : 0;</string>
+               </property>
+               <property name="text">
+                <string>Get info for user</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="extensionButton">
+               <property name="styleSheet">
+                <string notr="true">background-color: #232939;
+	border: 1px solid gray;
+    color: #f0f0f0;
+    gridline-color: #232939;
+    outline : 0;</string>
+               </property>
+               <property name="text">
+                <string>Populate Extensions</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_2">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>270</width>
+              <height>150</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+	border: 1px solid gray;
+    color: #f0f0f0;
+    gridline-color: #232939;
+    outline : 0;</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_5">
+             <item>
+              <widget class="CustomPlainTextEdit" name="Static3">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>250</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+               </property>
+               <property name="plainText">
+                <string>CUSTOM::PureCloudWebRTCExtension</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="CustomPlainTextEdit" name="Static1">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>150</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+               </property>
+               <property name="plainText">
+                <string>WebRTC Phone</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="CustomPlainTextEdit" name="Static2">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>150</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+               </property>
+               <property name="plainText">
+                <string>@readingprograms.org
+</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_3">
+            <property name="styleSheet">
+             <string notr="true">
+	border: 1px solid gray;
+    color: #f0f0f1;
+    gridline-color: #232939;
+    outline : 0;</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_6">
+             <item>
+              <widget class="CustomPlainTextEdit" name="adUsernameDisplay">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>15</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>400</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="CustomPlainTextEdit" name="phoneNumberDisplay">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>15</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>400</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="CustomPlainTextEdit" name="contactEmailDisplay">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>15</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>400</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="CustomPlainTextEdit" name="passwordDisplay">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>15</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>400</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="CustomPlainTextEdit" name="fullNameDisplay">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>15</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>400</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="CustomPlainTextEdit" name="firstNameDisplay">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>15</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>400</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="CustomPlainTextEdit" name="lastNameDisplay">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>15</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>400</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="CustomPlainTextEdit" name="emailDisplay">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>15</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>400</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="CustomPlainTextEdit" name="modifiedExtensionDisplay">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>15</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>400</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="mainBodyContainer" native="true">
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QScrollArea" name="scrollArea">
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>392</width>
+            <height>741</height>
+           </rect>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <widget class="QWidget" name="MainBodyLeft" native="true">
+             <layout class="QHBoxLayout" name="horizontalLayout_3">
+              <item>
+               <widget class="QWidget" name="widget" native="true">
+                <layout class="QVBoxLayout" name="verticalLayout_10">
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_1">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_2">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_3">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_4">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_5">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_6">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_7">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_8">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_9">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_10">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_11">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_12">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_13">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_14">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_15">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_16">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="frame_4">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_4">
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="extensionPaste_1">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>3000</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="extensionPaste_2">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>3001</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="extensionPaste_3">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>3002</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="extensionPaste_4">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>3003</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="extensionPaste_5">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>3004</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="extensionPaste_6">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>3005</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="extensionPaste_7">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>3006</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="extensionPaste_8">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>3007</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="extensionPaste_9">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>3008</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="extensionPaste_10">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>3009</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="extensionPaste_11">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>3011</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="extensionPaste_12">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>3012</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="extensionPaste_13">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>3013</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="extensionPaste_14">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>3014</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="extensionPaste_15">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>3015</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="extensionPaste_16">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>3016</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="mainBodyRight" native="true">
+             <layout class="QHBoxLayout" name="horizontalLayout_4">
+              <item>
+               <widget class="QFrame" name="frame_6">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_8">
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="nameUnderscore_1">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>First_Last</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="nameUnderscore_2">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>First_Last2</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="nameUnderscore_3">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>First_Last3</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="nameUnderscore_4">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>First_Last4</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="nameUnderscore_5">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>First_Last5</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="nameUnderscore_6">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>First_Last6</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="nameUnderscore_7">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>First_Last7</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="nameUnderscore_8">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>First_Last8</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="nameUnderscore_9">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>First_Last9</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="nameUnderscore_10">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>First_Last10</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="nameUnderscore_11">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>First_Last11</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="nameUnderscore_12">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>First_Last12</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="nameUnderscore_13">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>First_Last13</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="nameUnderscore_14">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>First_Last14</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="nameUnderscore_15">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>First_Last15</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="CustomPlainTextEdit" name="nameUnderscore_16">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 9pt &quot;Arial&quot;; background-color: white;
+  color: black;</string>
+                   </property>
+                   <property name="plainText">
+                    <string>First_Last16
+</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>848</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>CustomPlainTextEdit</class>
+   <extends>QPlainTextEdit</extends>
+   <header>customplaintextedit.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="OnboardAssist.qrc"/>
+ </resources>
+ <connections/>
+</ui>

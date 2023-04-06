@@ -1,11 +1,12 @@
 #include "OnboardAssist.h"
 #include <QtWidgets/QApplication>
 #include <QFile>
-int main(int argc, char *argv[])
+
+int main(int argc, char* argv[])
 {
     QApplication a(argc, argv);
-        
-        //Style Sheet Stuff
+
+    //Style Sheet Stuff
     QFile styleSheetFile("./stylesheet.css");
     styleSheetFile.open(QFile::ReadOnly);
     QString styleSheet = QLatin1String(styleSheetFile.readAll());
