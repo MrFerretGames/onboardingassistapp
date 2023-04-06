@@ -127,7 +127,7 @@ QList<OnboardAssist::User> OnboardAssist::loadUsersAndProcessData(const QString&
 
 
             QString lastNameLower = lastName[0].toLower();
-            QString password = QString("%1%2%3").arg(lastNameLower).arg(firstNameLower).arg(primaryPhoneNumber.right(4));
+            QString password = QString("%2%1%3").arg(lastNameLower).arg(firstNameLower).arg(primaryPhoneNumber.right(4));
             qDebug() << "Generated password:" << password;
             QString emailAddress = firstName + "_" + lastName + "@readingprograms.org";
 
